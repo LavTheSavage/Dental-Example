@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lumière Dental — Premium Smile Studio</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="page-home">
+
+<!-- SKELETON LOADER -->
+<div id="skeleton-overlay">
+  <div class="sk-nav"></div>
+  <div class="sk-hero">
+    <div class="sk-line wide"></div>
+    <div class="sk-line medium"></div>
+    <div class="sk-line short"></div>
+  </div>
+  <div class="sk-cards">
+    <div class="sk-card"></div>
+    <div class="sk-card"></div>
+    <div class="sk-card"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">✦</span>
+      <span class="logo-text">Lumière<em>Dental</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn-nav">Book Appointment</a>
+    <button class="burger" id="burger" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn-mobile">Book Appointment</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag reveal">Premier Smile Studio</div>
+    <h1 class="hero-title reveal delay-1">
+      Where <em>Science</em><br/>Meets Artistry
+    </h1>
+    <p class="hero-sub reveal delay-2">
+      Exceptional dental care crafted for those who demand nothing less than perfection. Your smile is our masterpiece.
+    </p>
+    <div class="hero-cta reveal delay-3">
+      <a href="contact.html" class="btn-gold">Begin Your Journey</a>
+      <a href="services.html" class="btn-ghost">Explore Services</a>
+    </div>
+    <div class="hero-stats reveal delay-4">
+      <div class="stat"><span class="stat-num" data-count="4800">0</span><span>+</span><p>Smiles Crafted</p></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><span class="stat-num" data-count="15">0</span><span>+</span><p>Years Excellence</p></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><span class="stat-num" data-count="98">0</span><span>%</span><p>Patient Satisfaction</p></div>
+    </div>
+  </div>
+  <div class="hero-visual reveal delay-2">
+    <div class="hero-card-float">
+      <div class="hcf-icon">🦷</div>
+      <div class="hcf-text">
+        <strong>Next Available</strong>
+        <span>Tomorrow, 10:00 AM</span>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <div class="hero-img-placeholder">
+        <div class="placeholder-icon">
+          <img src="images/lel.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <svg viewBox="0 0 100 100" width="80" height="80"><circle cx="50" cy="50" r="45" fill="none" stroke="var(--gold)" stroke-width="1"/><path id="textPath" d="M 50,5 A 45,45 0 1,1 49.9,5" fill="none"/><text font-size="9" fill="var(--gold)" font-family="Jost" letter-spacing="3"><textPath href="#textPath">CERTIFIED EXCELLENCE · AWARD WINNING · </textPath></text></svg>
+      <span class="badge-center">★</span>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Smile Design</span><span class="dot">✦</span>
+    <span>Cosmetic Dentistry</span><span class="dot">✦</span>
+    <span>Dental Implants</span><span class="dot">✦</span>
+    <span>Orthodontics</span><span class="dot">✦</span>
+    <span>Teeth Whitening</span><span class="dot">✦</span>
+    <span>Veneers</span><span class="dot">✦</span>
+    <span>Invisalign</span><span class="dot">✦</span>
+    <span>Root Canal</span><span class="dot">✦</span>
+    <span>Smile Design</span><span class="dot">✦</span>
+    <span>Cosmetic Dentistry</span><span class="dot">✦</span>
+    <span>Dental Implants</span><span class="dot">✦</span>
+    <span>Orthodontics</span><span class="dot">✦</span>
+    <span>Teeth Whitening</span><span class="dot">✦</span>
+    <span>Veneers</span><span class="dot">✦</span>
+    <span>Invisalign</span><span class="dot">✦</span>
+    <span>Root Canal</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- WHY CHOOSE US -->
+<section class="why-section section-pad">
+  <div class="container">
+    <div class="section-label reveal">Our Promise</div>
+    <h2 class="section-title reveal delay-1">Dentistry Elevated to<br/><em>an Art Form</em></h2>
+    <div class="why-grid">
+      <div class="why-card reveal delay-1">
+        <div class="why-icon">◈</div>
+        <h3>State-of-the-Art Technology</h3>
+        <p>3D imaging, laser dentistry, and digital smile design tools ensure precision that was once unimaginable.</p>
+      </div>
+      <div class="why-card reveal delay-2">
+        <div class="why-icon">◆</div>
+        <h3>Painless Experience</h3>
+        <p>Our gentle techniques and premium anaesthetics guarantee a comfortable, anxiety-free visit every time.</p>
+      </div>
+      <div class="why-card reveal delay-3">
+        <div class="why-icon">◇</div>
+        <h3>Expert Specialists</h3>
+        <p>Our team of internationally trained specialists brings decades of combined expertise to every procedure.</p>
+      </div>
+      <div class="why-card reveal delay-4">
+        <div class="why-icon">✦</div>
+        <h3>Personalised Care</h3>
+        <p>No two smiles are alike. Every treatment plan is meticulously tailored to your unique anatomy and goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED SERVICES -->
+<section class="featured-services section-pad alt-bg">
+  <div class="container">
+    <div class="section-label reveal">What We Offer</div>
+    <h2 class="section-title reveal delay-1">Comprehensive <em>Excellence</em></h2>
+    <div class="services-preview-grid">
+      <a href="services.html" class="sp-card reveal delay-1">
+        <div class="sp-num">01</div>
+        <div class="sp-icon">💎</div>
+        <h3>Smile Design</h3>
+        <p>A bespoke blueprint for your perfect smile using digital wax-up and mock-up trials.</p>
+        <span class="sp-link">Explore →</span>
+      </a>
+      <a href="services.html" class="sp-card reveal delay-2">
+        <div class="sp-num">02</div>
+        <div class="sp-icon">🪥</div>
+        <h3>Dental Veneers</h3>
+        <p>Ultra-thin porcelain shells that transform colour, shape, and alignment in just two visits.</p>
+        <span class="sp-link">Explore →</span>
+      </a>
+      <a href="services.html" class="sp-card reveal delay-3">
+        <div class="sp-num">03</div>
+        <div class="sp-icon">⚙️</div>
+        <h3>Implants</h3>
+        <p>Permanent, natural-looking replacements that fuse with your jawbone for lifelong stability.</p>
+        <span class="sp-link">Explore →</span>
+      </a>
+      <a href="services.html" class="sp-card reveal delay-4">
+        <div class="sp-num">04</div>
+        <div class="sp-icon">✨</div>
+        <h3>Teeth Whitening</h3>
+        <p>Professional-grade bleaching delivering up to 10 shades lighter in a single session.</p>
+        <span class="sp-link">Explore →</span>
+      </a>
+      <a href="services.html" class="sp-card reveal delay-1">
+        <div class="sp-num">05</div>
+        <div class="sp-icon">🔬</div>
+        <h3>Orthodontics</h3>
+        <p>Braces and Invisalign solutions for beautifully aligned teeth at every age.</p>
+        <span class="sp-link">Explore →</span>
+      </a>
+      <a href="services.html" class="sp-card reveal delay-2">
+        <div class="sp-num">06</div>
+        <div class="sp-icon">🛡️</div>
+        <h3>General Dentistry</h3>
+        <p>Preventive cleanings, fillings, and care that form the foundation of lifelong oral health.</p>
+        <span class="sp-link">Explore →</span>
+      </a>
+    </div>
+    <div class="center-cta reveal">
+      <a href="services.html" class="btn-gold">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section-pad">
+  <div class="container">
+    <div class="section-label reveal">Patient Stories</div>
+    <h2 class="section-title reveal delay-1">Words That <em>Inspire Us</em></h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal delay-1">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Lumière completely transformed my smile. The veneers look so natural — friends thought I had always looked this way. Truly life-changing."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div><strong>Sarah M.</strong><span>Smile Design Patient</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal delay-2 featured-testi">
+        <div class="testi-stars">★★★★★</div>
+        <p>"From the moment I walked in, I felt like royalty. The technology, the staff, the results — every aspect exceeded my expectations by miles."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">J</div>
+          <div><strong>James R.</strong><span>Implant Patient</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal delay-3">
+        <div class="testi-stars">★★★★★</div>
+        <p>"My Invisalign journey was smooth and the results are stunning. The team checked in every step. I cannot recommend Lumière highly enough."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div><strong>Aisha K.</strong><span>Orthodontics Patient</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-inner">
+    <div class="cta-orb"></div>
+    <div class="section-label light reveal">Limited Slots Available</div>
+    <h2 class="reveal delay-1">Ready for Your <em>Transformation?</em></h2>
+    <p class="reveal delay-2">Join thousands who've discovered the Lumière difference. Your journey to a perfect smile starts with one appointment.</p>
+    <a href="contact.html" class="btn-gold large reveal delay-3">Schedule a Consultation</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">✦</span>
+        <span class="logo-text">Lumière<em>Dental</em></span>
+      </a>
+      <p>Where science meets artistry. Crafting exceptional smiles since 2009.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram">ig</a>
+        <a href="#" aria-label="Facebook">fb</a>
+        <a href="#" aria-label="Twitter">tw</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-links">
+      <h4>Services</h4>
+      <a href="services.html">Smile Design</a>
+      <a href="services.html">Veneers</a>
+      <a href="services.html">Implants</a>
+      <a href="services.html">Orthodontics</a>
+      <a href="services.html">Whitening</a>
+    </div>
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <a href="tel:+1234567890">+1 (234) 567-890</a>
+      <a href="mailto:hello@lumiere.dental">hello@lumiere.dental</a>
+      <a href="#">Mon–Sat: 9AM – 7PM</a>
+      <a href="#">Sun: 10AM – 4PM</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Lumière Dental. All rights reserved.</p>
+    <div>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

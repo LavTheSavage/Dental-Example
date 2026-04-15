@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Lumière Dental</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    .awards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .award-card {
+      border: 1px solid var(--gray-100); border-radius: var(--radius-lg);
+      padding: 32px 24px; text-align: center; background: var(--white);
+      transition: var(--transition);
+    }
+    .award-card:hover { box-shadow: var(--shadow); border-color: var(--gold-light); transform: translateY(-4px); }
+    .award-icon { font-size: 36px; margin-bottom: 16px; }
+    .award-card h4 { font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--dark); margin-bottom: 6px; }
+    .award-card span { font-size: 12px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+    .mission-block {
+      background: linear-gradient(135deg, var(--dark) 0%, #2a2420 100%);
+      border-radius: var(--radius-xl);
+      padding: 80px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .mission-block::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,169,110,0.12), transparent 70%);
+    }
+    .mission-text { position: relative; z-index: 1; }
+    .mission-text h2 { font-family: var(--font-display); font-size: 44px; font-weight: 300; color: var(--white); margin-bottom: 24px; line-height: 1.2; }
+    .mission-text h2 em { color: var(--gold); font-style: italic; }
+    .mission-text p { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.8; }
+    .mission-pillars { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 20px; }
+    .pillar { display: flex; gap: 16px; align-items: flex-start; padding: 20px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); }
+    .pillar-icon { font-size: 20px; flex-shrink: 0; }
+    .pillar h5 { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 4px; }
+    .pillar p { font-size: 13px; color: rgba(255,255,255,0.5); font-weight: 300; }
+    @media (max-width: 1024px) {
+      .awards-grid { grid-template-columns: repeat(2, 1fr); }
+      .mission-block { grid-template-columns: 1fr; padding: 48px 36px; }
+    }
+    @media (max-width: 768px) { .awards-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+<div id="skeleton-overlay">
+  <div class="sk-nav"></div>
+  <div class="sk-hero"><div class="sk-line wide"></div><div class="sk-line medium"></div></div>
+  <div class="sk-cards"><div class="sk-card"></div><div class="sk-card"></div><div class="sk-card"></div></div>
+</div>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">✦</span><span class="logo-text">Lumière<em>Dental</em></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn-nav">Book Appointment</a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn-mobile">Book Appointment</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="section-label reveal">Our Story</div>
+    <h1 class="reveal delay-1">About <em>Lumière</em></h1>
+    <p class="reveal delay-2">A clinic founded on a belief that exceptional dental care and exceptional human connection are inseparable. We've spent 15 years proving it.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section-pad">
+  <div class="container">
+    <div class="about-story">
+      <div class="about-img reveal">
+        <div style="font-size:80px">
+          <img src="images/dentalp.jpeg">
+        </div>
+        <div class="about-img-badge">
+          <strong>2009</strong>
+          <span>Founded</span>
+        </div>
+      </div>
+      <div class="about-text reveal delay-2">
+        <div class="section-label">Our Beginning</div>
+        <h2>A Clinic Built on <em>Passion</em></h2>
+        <p>Lumière Dental was founded with a singular mission: to create a dental experience so extraordinary that patients actually look forward to their appointments.</p>
+        <p>We believed — and still believe — that dentistry should be as much about how you feel as it is about clinical outcomes. Every design choice in our clinic, every hire we make, every technology we invest in, flows from that belief.</p>
+        <p>Over fifteen years, we've crafted more than 4,800 smiles, earned recognition as a leading cosmetic dental practice, and built a team of specialists who share our obsession with excellence and our genuine love for the people we serve.</p>
+        <div class="about-values">
+          <div class="about-value">
+            <div class="av-icon">✦</div>
+            <div class="av-body"><h5>Excellence Without Compromise</h5><p>We use only premium materials and the latest technology, because your smile deserves nothing less.</p></div>
+          </div>
+          <div class="about-value">
+            <div class="av-icon">✦</div>
+            <div class="av-body"><h5>Transparency Always</h5><p>Clear pricing, honest diagnoses, and straightforward communication — no surprises, ever.</p></div>
+          </div>
+          <div class="about-value">
+            <div class="av-icon">✦</div>
+            <div class="av-body"><h5>Lifelong Relationships</h5><p>We care about your long-term oral health, not just the procedure in front of us.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section-pad alt-bg">
+  <div class="container">
+    <div class="mission-block reveal">
+      <div class="mission-text">
+        <div class="section-label light" style="margin-bottom:24px">Our Philosophy</div>
+        <h2>Dentistry as an <em>Art Form</em></h2>
+        <p>We don't just restore teeth — we design smiles that harmonise with your face, complement your personality, and stand the test of time. Every procedure is guided by aesthetic principles borrowed from art and architecture, combined with rigorous clinical science.</p>
+      </div>
+      <div class="mission-pillars">
+        <div class="pillar"><div class="pillar-icon">🎨</div><div><h5>Aesthetic Mastery</h5><p>Every smile is designed with the same care an artist brings to a masterpiece.</p></div></div>
+        <div class="pillar"><div class="pillar-icon">🔬</div><div><h5>Clinical Precision</h5><p>Digital technology and evidence-based techniques ensure results that last.</p></div></div>
+        <div class="pillar"><div class="pillar-icon">🤝</div><div><h5>Human Connection</h5><p>We listen, we understand, and we care — genuinely, every single appointment.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-label reveal">The People Behind Your Smile</div>
+    <h2 class="section-title reveal delay-1">Meet Our <em>Specialists</em></h2>
+    <div class="team-grid">
+      <div class="team-card reveal delay-1">
+        <div class="team-photo">
+          <img src="images/stf2.jpg">
+        </div>
+        <div class="team-info">
+          <h3>Dr. Elena Marchetti</h3>
+          <div class="role">Principal Dentist · Smile Design</div>
+          <p>BDS (London), MSc Aesthetic Dentistry (King's College). 18 years of experience with a special interest in smile transformations and porcelain veneers. International lecturer and certified Invisalign provider.</p>
+        </div>
+      </div>
+      <div class="team-card reveal delay-2">
+        <div class="team-photo">
+          <img src="images/stf1.jpg">
+        </div>
+        <div class="team-info">
+          <h3>Dr. James Okafor</h3>
+          <div class="role">Implantologist · Oral Surgeon</div>
+          <p>BDS, MFDS RCS, MSc Implantology. A leading authority in complex implant cases and full-arch restorations. Trained in Germany and Sweden, with over 2,000 successful implant placements.</p>
+        </div>
+      </div>
+      <div class="team-card reveal delay-3">
+        <div class="team-photo">
+          <img src="images/stf4.jpg">
+        </div>
+        <div class="team-info">
+          <h3>Dr. Priya Nair</h3>
+          <div class="role">Orthodontist</div>
+          <p>BDS, MOrth RCS. Specialist orthodontist with a master's from the Eastman Dental Institute. Expert in both fixed appliances and clear aligner systems, with a particular talent for complex adult cases.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="section-pad alt-bg">
+  <div class="container">
+    <div class="section-label reveal">Recognition</div>
+    <h2 class="section-title reveal delay-1">Awards & <em>Accreditations</em></h2>
+    <div class="awards-grid">
+      <div class="award-card reveal delay-1">
+        <div class="award-icon">🏆</div>
+        <h4>Best Cosmetic Clinic</h4>
+        <span>Dental Awards 2023</span>
+      </div>
+      <div class="award-card reveal delay-2">
+        <div class="award-icon">⭐</div>
+        <h4>5-Star Patient Rating</h4>
+        <span>Google · 4.9 / 5.0</span>
+      </div>
+      <div class="award-card reveal delay-3">
+        <div class="award-icon">🎓</div>
+        <h4>Certified Excellence</h4>
+        <span>Invisalign Diamond Provider</span>
+      </div>
+      <div class="award-card reveal delay-4">
+        <div class="award-icon">🌍</div>
+        <h4>International Recognition</h4>
+        <span>AACD Member Practice</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="cta-inner">
+    <div class="cta-orb"></div>
+    <div class="section-label light reveal">Let's Meet</div>
+    <h2 class="reveal delay-1">Come Experience <em>Lumière</em></h2>
+    <p class="reveal delay-2">Meet our team, see our clinic, and discover why thousands of patients trust us with their most important asset — their smile.</p>
+    <a href="contact.html" class="btn-gold large reveal delay-3">Book Your Visit</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><span class="logo-mark">✦</span><span class="logo-text">Lumière<em>Dental</em></span></a>
+      <p>Where science meets artistry. Crafting exceptional smiles since 2009.</p>
+      <div class="footer-socials"><a href="#">ig</a><a href="#">fb</a><a href="#">tw</a></div>
+    </div>
+    <div class="footer-links"><h4>Navigation</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+    <div class="footer-links"><h4>Services</h4><a href="services.html">Smile Design</a><a href="services.html">Veneers</a><a href="services.html">Implants</a><a href="services.html">Orthodontics</a><a href="services.html">Whitening</a></div>
+    <div class="footer-links"><h4>Contact</h4><a href="tel:+1234567890">+1 (234) 567-890</a><a href="mailto:hello@lumiere.dental">hello@lumiere.dental</a><a href="#">Mon–Sat: 9AM – 7PM</a><a href="#">Sun: 10AM – 4PM</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Lumière Dental. All rights reserved.</p><div><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

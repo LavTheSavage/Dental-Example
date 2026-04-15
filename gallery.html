@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery — Lumière Dental</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    .gallery-grid { align-items: start; }
+    .before-after { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .ba-card {
+      background: var(--white); border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg); overflow: hidden;
+      transition: var(--transition);
+    }
+    .ba-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+    .ba-images { display: grid; grid-template-columns: 1fr 1fr; position: relative; }
+    .ba-img {
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 40px; color: var(--gray-300);
+    }
+    .ba-img.after { background: linear-gradient(135deg, var(--gold-glow), rgba(201,169,110,0.08)); }
+    .ba-divider {
+      position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+      background: var(--gold); z-index: 1;
+    }
+    .ba-divider::after {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ba-labels { display: flex; }
+    .ba-label { flex: 1; text-align: center; padding: 8px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; }
+    .ba-label.before { color: var(--gray-400); background: var(--gray-100); }
+    .ba-label.after-l { color: var(--gold-dark); background: var(--gold-glow); }
+    .ba-info { padding: 20px 24px; }
+    .ba-info h4 { font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--dark); margin-bottom: 4px; }
+    .ba-info span { font-size: 12px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 9000;
+      background: rgba(13,12,11,0.95);
+      align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-inner { max-width: 800px; width: 90%; position: relative; }
+    .lightbox-close {
+      position: absolute; top: -48px; right: 0;
+      background: none; border: none; color: rgba(255,255,255,0.6);
+      font-size: 28px; cursor: pointer;
+    }
+    .lightbox-img {
+      width: 100%; aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--gray-800), var(--dark));
+      border-radius: var(--radius-lg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 60px; color: var(--gray-600);
+    }
+    .lightbox-info { color: rgba(255,255,255,0.7); padding: 20px 0; text-align: center; }
+    .lightbox-info h4 { font-family: var(--font-display); font-size: 24px; color: var(--white); margin-bottom: 4px; }
+    .lightbox-info span { font-size: 12px; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+    @media (max-width: 768px) { .before-after { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div id="skeleton-overlay">
+  <div class="sk-nav"></div>
+  <div class="sk-hero"><div class="sk-line wide"></div><div class="sk-line medium"></div></div>
+  <div class="sk-cards"><div class="sk-card"></div><div class="sk-card"></div><div class="sk-card"></div></div>
+</div>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">✦</span><span class="logo-text">Lumière<em>Dental</em></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn-nav">Book Appointment</a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn-mobile">Book Appointment</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="section-label reveal">Our Work</div>
+    <h1 class="reveal delay-1">The <em>Gallery</em></h1>
+    <p class="reveal delay-2">Real results from real patients. Every smile here represents a unique journey and a life transformed. Browse before-and-afters and our clinic portfolio.</p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="section-label reveal">Transformations</div>
+    <h2 class="section-title reveal delay-1">Before & <em>After</em></h2>
+    
+    <div class="before-after">
+      <div class="ba-card reveal delay-1">
+        <div class="ba-single-img">
+          <img src="images/bf.webp" alt="Full Smile Design Transformation">
+        </div>
+        <div class="ba-info">
+          <h4>Full Smile Design</h4>
+          <span>12 Porcelain Veneers + Whitening</span>
+        </div>
+      </div>
+
+      <div class="ba-card reveal delay-2">
+        <div class="ba-single-img">
+          <img src="images/bf2.jpg" alt="Invisalign Treatment Result">
+        </div>
+        <div class="ba-info">
+          <h4>Invisalign Treatment</h4>
+          <span>14 Months · Full Arch Alignment</span>
+        </div>
+      </div>
+
+      <div class="ba-card reveal delay-1">
+        <div class="ba-single-img">
+          <img src="images/bf4.jpg" alt="Implant Restoration Result">
+        </div>
+        <div class="ba-info">
+          <h4>Implant Restoration</h4>
+          <span>3 Implants + Ceramic Crowns</span>
+        </div>
+      </div>
+
+      <div class="ba-card reveal delay-2">
+        <div class="ba-single-img">
+          <img src="images/bf6.jpg" alt="Whitening Result">
+        </div>
+        <div class="ba-info">
+          <h4>Whitening + Composite Bonding</h4>
+          <span>8 Shades Lighter · Single Session</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY GRID -->
+<section class="section-pad alt-bg">
+  <div class="container">
+    <div class="section-label reveal">Portfolio</div>
+    <h2 class="section-title reveal delay-1">Our <em>Work</em></h2>
+    <div class="gallery-filters reveal delay-2">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="cosmetic">Cosmetic</button>
+      <button class="filter-btn" data-filter="implants">Implants</button>
+      <button class="filter-btn" data-filter="ortho">Orthodontics</button>
+      <button class="filter-btn" data-filter="whitening">Whitening</button>
+      <button class="filter-btn" data-filter="clinic">Our Clinic</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item gi-large reveal delay-1" data-cat="cosmetic" data-title="Full Smile Makeover" data-sub="Veneers · Whitening" onclick="openLightbox(this)">
+        <div class="gallery-placeholder"><img src="images/bf10.jpg" ></div>
+        <div class="gallery-overlay"><div class="gallery-info"><h4>Full Smile Makeover</h4><span>Veneers · Whitening</span></div></div>
+      </div>
+      <div class="gallery-item reveal delay-2" data-cat="implants" data-title="Single Implant" data-sub="Ceramic Crown" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+<img src="images/implant.jpg">
+        </div>
+        <div class="gallery-overlay"><div class="gallery-info"><h4>Single Implant</h4><span>Ceramic Crown</span></div></div>
+      </div>
+      <div class="gallery-item reveal delay-3" data-cat="ortho" data-title="Invisalign Result" data-sub="Full Arch" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+          <img src="images/invisalign.jpg">
+        </div>
+        <div class="gallery-overlay"><div class="gallery-info"><h4>Invisalign Result</h4><span>Full Arch Alignment</span></div></div>
+      </div>
+      <div class="gallery-item reveal delay-1" data-cat="whitening" data-title="Professional Whitening" data-sub="10 Shades Lighter" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+          <img src="images/whitening.jpg">
+        </div>
+        <div class="gallery-overlay"><div class="gallery-info"><h4>Professional Whitening</h4><span>10 Shades Lighter</span></div></div>
+      </div>
+      <div class="gallery-item reveal delay-2" data-cat="clinic" data-title="Treatment Suite" data-sub="Our Premium Clinic" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+          <img src="images/dental.jpg">
+        </div>
+        <div class="gallery-overlay"><div class="gallery-info"><h4>Treatment Suite</h4><span>Our Premium Clinic</span></div></div>
+      </div>
+      <div class="gallery-item reveal delay-3" data-cat="cosmetic" data-title="Porcelain Veneers" data-sub="8 Upper Veneers" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+          <img src="images/porceline.jpg">
+        </div>
+        <div class="gallery-overlay"><div class="gallery-info"><h4>Porcelain Veneers</h4><span>8 Upper Veneers</span></div></div>
+      </div>
+      <div class="gallery-item gi-large reveal delay-1" data-cat="clinic" data-title="Reception & Waiting" data-sub="Lumière Dental Studio" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+          <img src="images/reception.jpg">
+        </div>
+        <div class="gallery-overlay"><div class="gallery-info"><h4>Reception & Waiting Area</h4><span>Lumière Dental Studio</span></div></div>
+      </div>
+      <div class="gallery-item reveal delay-2" data-cat="implants" data-title="Full Arch Implants" data-sub="All-on-4 Restoration" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+          <img src="images/fullarch.jpg">
+        </div>
+        <div class="gallery-overlay"><div class="gallery-info"><h4>Full Arch Implants</h4><span>All-on-4 Restoration</span></div></div>
+      </div>
+      <div class="gallery-item reveal delay-3" data-cat="ortho" data-title="Ceramic Braces" data-sub="18 Month Treatment" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+          <img src="images/ceramic.jpg">
+        </div>
+        <div class="gallery-overlay"><div class="gallery-info"><h4>Ceramic Braces</h4><span>18 Month Treatment</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <div class="lightbox-img" id="lightboxIcon">💎</div>
+    <div class="lightbox-info">
+      <h4 id="lightboxTitle">—</h4>
+      <span id="lightboxSub">—</span>
+    </div>
+  </div>
+</div>
+
+<section class="cta-banner">
+  <div class="cta-inner">
+    <div class="cta-orb"></div>
+    <div class="section-label light reveal">See Your Potential</div>
+    <h2 class="reveal delay-1">Could This Be <em>Your Smile?</em></h2>
+    <p class="reveal delay-2">These results are achievable. Book a consultation and we'll show you exactly what's possible for your unique smile.</p>
+    <a href="contact.html" class="btn-gold large reveal delay-3">Book a Consultation</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><span class="logo-mark">✦</span><span class="logo-text">Lumière<em>Dental</em></span></a>
+      <p>Where science meets artistry. Crafting exceptional smiles since 2009.</p>
+      <div class="footer-socials"><a href="#">ig</a><a href="#">fb</a><a href="#">tw</a></div>
+    </div>
+    <div class="footer-links"><h4>Navigation</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+    <div class="footer-links"><h4>Services</h4><a href="services.html">Smile Design</a><a href="services.html">Veneers</a><a href="services.html">Implants</a><a href="services.html">Orthodontics</a><a href="services.html">Whitening</a></div>
+    <div class="footer-links"><h4>Contact</h4><a href="tel:+1234567890">+1 (234) 567-890</a><a href="mailto:hello@lumiere.dental">hello@lumiere.dental</a><a href="#">Mon–Sat: 9AM – 7PM</a><a href="#">Sun: 10AM – 4PM</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Lumière Dental. All rights reserved.</p><div><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+function openLightbox(el) {
+  document.getElementById('lightbox').classList.add('open');
+  document.getElementById('lightboxTitle').textContent = el.dataset.title || '—';
+  document.getElementById('lightboxSub').textContent = el.dataset.sub || '—';
+  const icon = el.querySelector('.gallery-placeholder')?.textContent || '💎';
+  document.getElementById('lightboxIcon').textContent = icon;
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+document.getElementById('lightbox')?.addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
